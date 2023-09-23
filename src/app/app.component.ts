@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import {getLocaleDateFormat} from "@angular/common";
+import {dateTimestampProvider} from "rxjs/internal/scheduler/dateTimestampProvider";
 
 @Component({
   selector: 'app-root',
@@ -7,4 +9,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'EvoProjFirst';
+  date_now = Date.now();
+  num = 1;
 }
