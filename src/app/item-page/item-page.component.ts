@@ -7,9 +7,7 @@ import {ActivatedRoute} from "@angular/router";
   styleUrls: ['./item-page.component.css']
 })
 export class ItemPageComponent implements OnInit{
-  constructor(
-    private activateRouter: ActivatedRoute
-  ) {  }
+  constructor(private activateRouter: ActivatedRoute) {}
   params(){
     console.log(this.activateRouter.snapshot.params)
   }
