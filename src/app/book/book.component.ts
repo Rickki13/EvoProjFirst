@@ -7,9 +7,7 @@ import {BooksService} from "./books.service";
   styleUrls: ['./book.component.css']
 })
 export class BookComponent {
-  constructor(
-    public bookServ: BooksService
-  ) { }
+  constructor(public bookServ: BooksService) { }
 
   protected readonly BooksService = BooksService;
 }
