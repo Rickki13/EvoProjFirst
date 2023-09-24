@@ -1,0 +1,6 @@
+<h3>Стул</h3>
+
+<button routerLink="details" (click)="params()">Доп. информация</button>
+<button routerLink="list" [queryParams]="{'list':'1', 'enable':true}">Список</button>
+
+<router-outlet></router-outlet>
