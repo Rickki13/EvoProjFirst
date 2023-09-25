@@ -1,0 +1,21 @@
+<mat-list>
+  <mat-list-item>
+    <button (click)="notiflix_alert('warning')">Notify Warning</button>
+  </mat-list-item>
+  <mat-list-item>
+    <button (click)="notiflix_alert('success')">Notify Success</button>
+  </mat-list-item>
+  <mat-list-item>
+    <button (click)="notiflix_alert('error')">Notify Error</button>
+  </mat-list-item>
+  <mat-list-item>
+    <button (click)="notiflix_alert('info')">Notify Info</button>
+  </mat-list-item>
+</mat-list>
+
+<br />
+
+<p>Проверка кнопок (ответ отображается в логах): </p>
+<button type="button" class="btn btn-primary btn-lg" (click)="HelloBtn()">Hello?</button>
+<button type="button" class="btn btn-secondary btn-lg" (click)="ByeBtn()">Bye?</button>
+
