@@ -4,15 +4,16 @@ import {
   ActivatedRouteSnapshot,
   RouterStateSnapshot
 } from '@angular/router';
-import {Observable, of} from "rxjs";
+import {Observable} from "rxjs";
 import {DataService} from "./data.service";
 
 @Injectable({
   providedIn: 'root'
 })
 export class PreFetchingResolver implements Resolve<string> {
-  constructor(private dataService: DataService) {}
-  resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<string>{
+  constructor(private dataService: DataService) {
+  }
+  resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<string> {
     return this.dataService.resolveRoute();
   }
-};
+}
