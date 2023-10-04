@@ -1,5 +1,5 @@
 <div class="container p-1">
-  <button class="btn btn-primary" (click)="enableIntervalOperator()">Запустить</button>
+  <button class="btn btn-primary" [disabled]="enableNum && enableNumRand" (click)="enableIntervalOperator()">Запустить</button>
 </div>
 
 <div class="container d-flex p-1">
@@ -7,7 +7,7 @@
     <table class="table table-hover">
       <thead>
       <tr>
-        <button class="btn btn-primary" (click)="disableIntervalOperator()">Остановить</button>
+        <button class="btn btn-primary" [disabled]="!enableNum" (click)="disableIntervalOperator()">Остановить</button>
       </tr>
       <tr>
         <th>Числа по порядку</th>
@@ -25,7 +25,7 @@
     <table class="table table-hover">
       <thead>
       <tr>
-        <button class="btn btn-primary" (click)="disableIntervalOperatorRand()">Остановить</button>
+        <button class="btn btn-primary" [disabled]="!enableNumRand" (click)="disableIntervalOperatorRand()">Остановить</button>
       </tr>
       <tr>
         <th>Рандомные числа</th>
