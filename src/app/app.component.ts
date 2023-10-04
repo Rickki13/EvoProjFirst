@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 
 interface BookInt{
-  title: string | null;
-  author: string | null;
+  title: string | null
+  author: string | null
 }
 @Component({
   selector: 'app-root',
@@ -24,17 +24,17 @@ export class AppComponent {
       title: 'Мастер и Маргарита',
       author: 'Михаил Булгаков'
     }
-  ]
+  ];
 
   newBook = {
-    title: null,
-    author: null,
+    title: '',
+    author: ''
   };
 
   createBook() {
     this.books.push({
       title: this.newBook.title,
-      author: this.newBook.author,
+      author: this.newBook.author
     });
   }
 }
