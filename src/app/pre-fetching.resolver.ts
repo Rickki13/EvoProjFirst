@@ -11,8 +11,7 @@ import {DataService} from "./data.service";
   providedIn: 'root'
 })
 export class PreFetchingResolver implements Resolve<string> {
-  constructor(private dataService: DataService) {
-  }
+  constructor(private dataService: DataService) {}
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<string> {
     return this.dataService.resolveRoute();
   }
