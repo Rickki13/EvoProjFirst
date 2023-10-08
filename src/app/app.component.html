@@ -1,5 +1,5 @@
-<button (click)="getUsers()">subscribe</button>
+<button class="btn btn-primary m-2" (click)="getUsers()">Получить</button>
 
-<ng-container  *ngFor="let user of users">
+<ng-container *ngFor="let user of users">
   <p>{{user | json}}</p>
 </ng-container>
