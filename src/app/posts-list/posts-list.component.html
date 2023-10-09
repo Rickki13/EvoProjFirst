@@ -1,0 +1,12 @@
+<h3 class="m-2">Список записей</h3>
+
+<div class="card m-2" style="width: 18rem;" *ngFor="let i of [0, 1]">
+  <div class="card-body">
+    <h5 class="card-title">{{posts[i].id}}</h5>
+    <p class="card-text">{{posts[i].title}}</p>
+    <a routerLink="post/{{i}}" class="btn btn-primary">Посмотреть данные</a>
+  </div>
+</div>
+
+<router-outlet ></router-outlet>
+
