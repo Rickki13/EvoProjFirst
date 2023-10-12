@@ -2,7 +2,6 @@ import {Component, OnInit} from '@angular/core';
 import {Store} from "@ngxs/store";
 import {AuthState} from "./store/auth.state";
 import {AuthenticationInterface, AuthUpdate} from "./store/model/auth.model";
-import {interval} from "rxjs";
 
 @Component({
   selector: 'app-root',
@@ -17,14 +16,12 @@ export class AppComponent implements OnInit {
   currentAuth: AuthenticationInterface[] = [];
   text = '';
   ngOnInit() {
-    console.log(this.store.selectSnapshot(AuthState.getToken));
-    console.log(this.store.selectSnapshot(AuthState.getAuthObject));
-
     this.store.select(AuthState.getAuthObject).subscribe({
       next: (value) => {
         this.currentAuth.push(value);
       }
     })
+    this.deleteStore(0);
   }
 
   updateStore() {
@@ -35,19 +32,15 @@ export class AppComponent implements OnInit {
     );
   }
 
-/*  deleteStore() {
+  deleteStore(index: number) {
+    const updatedAuth = [...this.currentAuth];
+    const deletedItem = this.currentAuth[index];
+    updatedAuth.splice(index, 1);
     this.store.dispatch(
       new AuthUpdate({
-        token: null
+        token: deletedItem.token
       })
     );
-  }*/
-  deleteStore() {
-    this.store.reset(
-      new AuthUpdate({
-        token: null
-      })
-    );
+    this.currentAuth = updatedAuth;
   }
-
 }

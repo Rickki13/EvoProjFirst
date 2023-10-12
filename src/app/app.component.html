@@ -2,12 +2,17 @@
   <h2>TODO Items </h2>
   <input class="input" name="todo" [(ngModel)]="text" type="text">
   <br>
+
   <span>All Tasks </span>
   <button class="btn btn-primary button-wrapper" (click)="updateStore()" [disabled]="!text">Add</button>
-  <ng-container *ngFor="let obj of currentAuth; index as i">
-    <div *ngIf="i > 0">
-      {{obj.token}}
+
+  <ng-container *ngIf="currentAuth.length > 0">
+    <div *ngFor="let obj of currentAuth; index as i">
+      <input class="m-2" type="checkbox">
+      <span>{{obj.token}}</span>
+      <button class="btn btn-danger button-wrapper" (click)="deleteStore(i)">Delete</button>
     </div>
   </ng-container>
+
 </div>
 
