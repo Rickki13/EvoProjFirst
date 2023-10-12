@@ -3,7 +3,7 @@ import {
   HttpRequest,
   HttpHandler,
   HttpEvent,
-  HttpInterceptor
+  HttpInterceptor, HttpHeaders
 } from '@angular/common/http';
 import {Observable} from 'rxjs';
 
@@ -17,8 +17,8 @@ export class LoggingInterceptor implements HttpInterceptor {
     next: HttpHandler
   ): Observable<HttpEvent<any>> {
     request = request.clone({
-      params: request.params.set('id', '1')
+      url: `${request.url}/1`
     });
-    return next.handle((request))
+    return next.handle(request);
   }
 }

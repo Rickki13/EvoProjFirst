@@ -12,11 +12,11 @@ export class AppComponent implements OnInit {
 
   title = 'EvoProjFirst';
 
-  users: object[] = [];
+  users: any[] = [];
   getUsers(){
     this.dataService.getUsers().subscribe({
       next: (resp: any) => {
-        this.users = resp;
+        this.users = Object.values(resp);
         console.log(resp);
       },
       error: (err: HttpErrorResponse) => {}
