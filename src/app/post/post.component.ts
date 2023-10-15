@@ -16,8 +16,8 @@ export class PostComponent implements OnInit{
     private router: Router
   ) {}
 
-  role = this.dataService.role;
-  isEditable= false;
+  // role = this.dataService.role;
+
   curId: number = 0;
 
   post = {

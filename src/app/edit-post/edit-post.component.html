@@ -1,0 +1,27 @@
+<h3 class="m-2">Редактирование записи</h3>
+<table class="table m-2" [attr.contenteditable]="true">
+  <thead>
+  <tr>
+    <th scope="col">id</th>
+    <th scope="col">userId</th>
+    <th scope="col">title</th>
+    <th scope="col">body</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <th scope="row">{{ post.id }}</th>
+    <td>{{ post.userId }}</td>
+    <td>{{ post.title }}</td>
+    <td>{{ post.body }}</td>
+  </tr>
+  </tbody>
+</table>
+
+<button
+  class="btn btn-primary m-2"
+>Сохранить
+</button>
+
+<a routerLink="/" class="btn btn-link">На главную</a>
+<router-outlet ></router-outlet>
