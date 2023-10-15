@@ -6,13 +6,10 @@
   <span>All Tasks </span>
   <button class="btn btn-primary button-wrapper" (click)="updateStore()" [disabled]="!text">Add</button>
 
-  <ng-container *ngIf="currentAuth.length > 0">
-    <div *ngFor="let obj of currentAuth; index as i">
-      <input class="m-2" type="checkbox">
-      <span>{{obj.token}}</span>
-      <button class="btn btn-danger button-wrapper" (click)="deleteStore(i)">Delete</button>
-    </div>
-  </ng-container>
-
+  <div class="m-1" *ngFor="let task of tasks | async">
+    <input class="m-2" type="checkbox" >
+    <span>{{task}}</span>
+    <button class="btn btn-danger button-wrapper" (click)="deleteStore(task)">Delete</button>
+  </div>
 </div>
 

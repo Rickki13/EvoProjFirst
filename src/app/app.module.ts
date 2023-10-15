@@ -7,8 +7,8 @@ import { NgxsModule } from "@ngxs/store";
 import { NgxsLoggerPluginModule } from "@ngxs/logger-plugin";
 import { NgxsReduxDevtoolsPluginModule } from "@ngxs/devtools-plugin";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { AuthState } from "./store/auth.state";
-import {FormsModule} from "@angular/forms";
+import { TaskState } from "./store/task-state.service";
+import { FormsModule } from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -17,7 +17,7 @@ import {FormsModule} from "@angular/forms";
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgxsModule.forRoot([AuthState]),
+    NgxsModule.forRoot([TaskState]),
     NgxsLoggerPluginModule.forRoot(),
     NgxsReduxDevtoolsPluginModule.forRoot(),
     BrowserAnimationsModule,
